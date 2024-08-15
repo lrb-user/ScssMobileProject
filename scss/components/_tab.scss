@@ -12,7 +12,7 @@
         background-color:$grayf8;
         border-radius:rem(30);
         &.--active{
-            background: linear-gradient(114deg, #0038F5 0%, #9F03FF 100%);
+            background: $bgPrimary;
             color:$white;
         }
     }

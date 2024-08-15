@@ -3,6 +3,7 @@
 .footer-visiual{
     display:grid;
     gap:rem(28);
+    padding:rem(0) rem(16);
     &__top{
         text-align: center;
         color:$gray22;

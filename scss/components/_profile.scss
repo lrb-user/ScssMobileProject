@@ -1,19 +1,30 @@
 @use '../abstracts/' as *;
-
-.profile{
+.profile-active{
+    position:absolute;
+    top:0;
+    right:0;
+    width:rem(12);
+    height:rem(12);
+    border:2px solid $white;
+    border-radius: 50%;
+    background-color: $green;
+}
+.profile-img{
+    img{
+        width: 100%;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+}
+.profile-type1{
     .align{
         gap: rem(8);
     }
     display:flex;
     justify-content: space-between;
     align-items: center;
-    &__img{
+    .profile-img{
         @include profileImg(rem(48), rem(48));
-        img{
-            width: 100%;
-            border-radius: 50%;
-            overflow: hidden;
-        }
     }
     &__name{
         color:$gray33;
@@ -31,14 +42,76 @@
     }
 }
 
-.profile-active{
-    position:absolute;
-    top:0;
-    right:0;
-    width:rem(12);
-    height:rem(12);
-    border:2px solid $white;
-    border-radius: 50%;
-    background-color: $green;
+.profile-type2{
+    display:flex;
+    gap:rem(10);
+    box-sizing: border-box;
+    &__info-content{
+        display:flex;
+        gap:rem(10);
+    }
+    .profile-img{
+        @include profileImg(rem(52), rem(52));
+    }
+    &__title{
+        color:$gray22;
+        font-size:rem(14);
+        line-height:rem(20);
+    }
+    &__time{
+        color:$gray55;
+        font-size:rem(13);
+        font-weight:500;
+        line-height:rem(20);
+    }
+    &__eth-price{
+        color:$gray22;
+        font-size:rem(16);
+        line-height:rem(24);
+    }
+    &__dollar-price{
+        color:$gray88;
+        font-size:rem(13);
+        font-weight:500;
+        line-height:rem(20);
+    }
+    .btn-link{
+        margin-top:rem(10);
+    }
 }
 
+.profile-type3{
+    display:flex;
+    align-items: center;
+    gap:rem(6);
+    .profile-img{
+        @include profileImg(rem(30), rem(30));
+    }
+    &__user-name{
+        color:$gray33;
+        font-weight: 700;
+        font-size:rem(13);
+        line-height:rem(20);
+    }
+    .profile-active{
+        width:rem(7);
+        height:rem(7);
+    }
+}
+
+.follow-group{
+    display:inline-flex;
+    position: absolute;
+    bottom:rem(20);
+    left:rem(12);
+    .follow-person{
+        @include profileImg(rem(28), rem(28));
+        border-radius: 50%;
+        border:2px solid $white;
+        overflow:hidden;
+        transform:translateX(-35%);
+        &:first-child{
+            transform:translateX(0);
+        }
+    }
+}

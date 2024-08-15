@@ -22,27 +22,38 @@
 
 .list-type2{
     &__thumb{
+        position: relative;
         img{
             width:100%;
         }
     }
     &__content{
-        padding:rem(6) rem(10) rem(0);
+        padding:rem(6) rem(10);
     }
     &__title{
         color:$gray22;
         font-size:rem(16);
         line-height:rem(24);
     }
+    &__eth{
+        display:inline-block;
+        height:rem(30);
+        color:$gray22;
+        font-size:rem(16);
+        padding:0 rem(10);
+        border:1px solid $graydc;
+        border-radius:rem(34);
+    }
     &__desc{
         color:$gray55;
         font-size:rem(13);
         font-weight: 500;
         line-height:rem(20);
+        margin-top:rem(4);
         b{
             color:$gray33;
             font-size:rem(14);
-            font-weight:400;
+            font-weight:bold;
             line-height:rem(20);
         }
     }
