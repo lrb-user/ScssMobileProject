@@ -1,0 +1,43 @@
+@use '../abstracts/' as *;
+
+.profile{
+    .align{
+        gap: rem(8);
+    }
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    &__img{
+        @include profileImg(rem(48), rem(48));
+        img{
+            width: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+    }
+    &__name{
+        color:$gray33;
+        font-size:rem(18);
+        font-weight: 700;
+        line-height: rem(28);
+        letter-spacing: rem(0.75);
+    }
+    &__role{
+        color:$gray55;
+        font-size: rem(14);
+        font-weight: 500;
+        line-height: rem(20); /* 142.857% */
+        letter-spacing: rem(0.75);
+    }
+}
+
+.profile-active{
+    position:absolute;
+    top:0;
+    right:0;
+    width:rem(12);
+    height:rem(12);
+    border:2px solid $white;
+    border-radius: 50%;
+    background-color: $green;
+}

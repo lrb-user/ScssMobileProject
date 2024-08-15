@@ -1,0 +1,128 @@
+@use '../abstracts/' as *;
+
+%inline-block{
+    display: inline-block;
+}
+.btn{
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:rem(8);
+    &.icon-plus{
+        gap:rem(8);
+        &::before{
+            @include background('icon_plus.svg', center);
+            @extend %inline-block;
+            content:"";
+            width:rem(24);
+            height:rem(24);
+        }
+    }
+}
+.btn-small{
+    height:rem(38);
+    font-size:rem(16);
+}
+.btn-large{
+    height:rem(56);
+    font-size:rem(20);
+    font-weight:700;
+}
+.btn-bk-primary{
+    color:$white;
+    background: linear-gradient(114deg, #0038F5 0%, #9F03FF 100%);
+}
+.btn-outline-secondary{
+    border:1px solid $primary-2;
+    color:$gray22;
+}
+.btn-outline-gray{
+    border:1px solid $gray55;
+    color:$gray55;
+}
+
+
+.btn-menu{
+    @include background('btn_menu.svg', center);
+    @extend %inline-block;
+    width:rem(24);
+    height:rem(24);
+    .header &{
+        //header padding값이 0 16px이라 버튼 width24px + 16*2 = 56px로 계산했는데, 계산법이 이게 맞을까요..?
+        width:rem(56);
+        height:rem(65);
+    }
+}
+%iconButtonSize{
+    width:rem(16);
+    height:rem(16);
+}
+.btn-search{
+    @include background('icon_search.svg', center);
+    @extend %inline-block;
+    @extend %iconButtonSize;
+    .search-type1 &{
+        width:rem(36);
+        height:rem(40);
+    }
+}
+.btn-microphone{
+    @include background('icon_microphone.svg', center);
+    @extend %inline-block;
+    @extend %iconButtonSize;
+    .search-type1 &{
+        width:rem(32);
+        height:rem(40);
+    }
+}
+.btn-heart-gray{
+    @include background('icon_heart.svg', center);
+    @extend %inline-block;
+    width:rem(24);
+    height:rem(24);
+}
+.btn-heart-black{
+    @include background('icon_heart-black.svg', center, $grayfc);
+    @extend %inline-block;
+    width:rem(40);
+    height:rem(40);
+    border-radius: 50%;
+}
+.btn-download{
+    @include background('icon_download.svg', center, $grayfc);
+    @extend %inline-block;
+    width:rem(40);
+    height:rem(40);
+    border-radius:50%;
+}
+.btn-prev{
+    @include background('btn_prev.svg', center);
+    @extend %inline-block;
+    width:rem(24);
+    height:rem(24);
+}
+.btn-next{
+    @include background('btn_next.svg', center);
+    @extend %inline-block;
+    width:rem(24);
+    height:rem(24);
+}
+.btn-link{
+    @include background('icon_link.svg', center);
+    @extend %inline-block;
+    width:rem(24);
+    height:rem(24);
+}
+.btn-follow{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding:rem(0) rem(30);
+    color:$gray33;
+    font-size:rem(16);
+    font-weight:700;
+    line-height:rem(24);
+    border-radius:rem(8);
+    box-shadow:$shadow2;
+    background-color:$grayfc;
+}

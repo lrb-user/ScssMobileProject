@@ -1,5 +1,14 @@
 @use './abstracts/' as *;
 @use './base/' as *;
 @use './layout' as *;
+@use './components/' as *;
+
+//style.html > 컴포넌트별 tilte css
+.guide-title{
+    background-color: yellow;
+    margin: rem(10) 0 rem(5) ;
+    padding: rem(5);
+    font-size: rem(20);
+}
 
 
