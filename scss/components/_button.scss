@@ -1,0 +1,7 @@
+@use '../abstracts/' as *;
+
+.btn-bookmark{
+    @include background('btn_bookmark.svg', center);
+    width:rem(33);
+    height:rem(33);
+}

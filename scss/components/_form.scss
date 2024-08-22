@@ -1,0 +1,179 @@
+@use '../abstracts/' as *;
+@use 'sass:list';
+
+//form (input) 디자인 정의
+$formSettings: (
+    'className': 'input-type1',
+    'height': rem(40),
+    'padding': rem(0) rem(15),
+    'fontSize': rem(13),
+    'fontWeight': 500,
+    'letterSpacing': rem(-0.3),
+    'borderRadius': rem(5),
+    'backgroundColor': $grayf4,
+    'placeholder': $blue67,
+);
+//radio 디자인 정의
+$radioSettings:(
+    1: (
+        'className':'.radio-type1',
+        'width':rem(14),
+        'height':rem(14),
+        'offImage':'ico_radio_off.svg',
+        'onImage': 'ico_radio_on.svg',
+
+    )
+);
+//select디자인 정의
+$selectSettings:(
+    'bgUrl':'bg_select.svg',
+    'position':rem(15),
+    'bgColor': $grayf4,
+);
+
+%form{
+    height:map-get($formSettings, height);
+    padding:map-get($formSettings, padding);
+    font-size:map-get($formSettings, fontSize);
+    font-weight:map-get($formSettings, fontWeight);
+    letter-spacing: map-get($formSettings, letterSpacing);
+    border-radius: map-get($formSettings, borderRadius);
+    background-color: map-get($formSettings, backgroundColor);
+    border:none;
+    box-sizing: border-box;
+    &::placeholder{
+        color:map-get($formSettings, placeholder);
+    }
+}
+
+
+
+//input + label 일 경우
+.input-label-type1{
+    display:grid;
+    gap:rem(9);
+    label{
+        display:block;
+        font-size:rem(13);
+        font-weight:600;
+        line-height:rem(21.528);
+        letter-spacing: rem(-0.3);
+    }
+}
+//input 
+.input-type1{
+    @extend %form;
+    width:var(--w, 100%);
+}
+
+//select
+.select-group1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:rem(13);
+}
+.select-type1{
+    @include background(map-get($selectSettings, bgUrl), right map-get($selectSettings, position) center);
+    @extend %form;
+    width:var(--w, 100%);
+    color:$blue67;
+    appearance: none;
+    padding-right:rem(25);
+    background-color:map-get($selectSettings, bgColor);
+}
+
+//textarea
+.textarea-type1{
+    @extend %form;
+    width:var(--w, 100%);
+    height:rem(100);
+    padding:rem(15);
+}
+
+//radio
+.radio-type2{
+    display: flex;
+    justify-content: space-between;
+    .radio-type1{
+        // order:1;
+    }
+    label{
+        justify-content: space-between;
+        width:100%;
+        &::before{
+            order:2;
+        }
+    }
+}
+.radio-group1{
+    display:flex;
+    align-items: center;
+    gap:rem(27);
+}
+.radio-group2{
+    border-bottom: 1px solid rgba(18, 45, 77, 0.80);
+}
+.input-type2{
+    width:calc(100% - rem(14));
+    height:rem(38);
+    border:none;
+    &:read-only{
+        color:$blue2a;
+    }
+}
+.radio-type2{
+    div{
+
+    }
+}
+// .radio-type1{
+//     @include ally-hidden;
+//     + label{
+//         display:inline-flex;
+//         align-items: center;
+//         &::before{
+//             @include background('ico_radio_off.svg', center);
+//             content:"";
+//             width:rem(14);
+//             height:rem(14);
+//         }
+//     }
+//     &:checked{
+//         + label{
+//             &::before{
+//                 @include background('ico_radio_on.svg', center);
+//             }
+//         }
+//     }
+// }
+
+@mixin Radio($mapName, $index) {
+    #{map-get($mapName, $index, className)} {
+        @include ally-hidden;
+        + label{
+            display:inline-flex;
+            align-items: center;
+            gap: rem(11);
+            color:$blue67;
+            font-size:rem(13);
+            font-weight:500;
+            letter-spacing: rem(-0.3);
+            &::before{
+                @include background(map-get($radioSettings, $index, offImage));
+                content:"";
+                width:map-get($radioSettings, $index, width);
+                height:map-get($radioSettings, $index, height);
+            }
+        }
+        &:checked{
+            + label{
+                &::before{
+                    @include background(map-get($radioSettings, $index, onImage));
+                }
+            }
+        }
+    }
+}
+@for $idx from 1 through list.length($radioSettings) {
+    @include Radio($radioSettings, $idx);
+}

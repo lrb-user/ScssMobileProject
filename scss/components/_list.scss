@@ -1,0 +1,192 @@
+@use '../abstracts/' as *;
+.list-type1{
+    li{
+        border-radius:rem(15);
+        box-shadow:$shadow1;
+        background:$white;
+        overflow:hidden;
+    }
+    &__thumb{
+        img{
+            width:100%;
+            height:100%;
+        }
+    }
+    &__content{
+        display:flex;
+        justify-content: space-between;
+        align-items: end;
+        padding:rem(13) rem(10) rem(15);
+    }
+    &__text{
+        display:grid;
+        gap:rem(9);
+    }
+}
+
+.list-type2{
+    li{
+        width:100%;
+        padding:rem(10);
+        border-radius:rem(15);
+        box-sizing: border-box;
+        background:$white;
+        box-shadow:$shadow1;
+    }
+    a{
+        display:flex;
+        gap:rem(10);
+    }
+    &__thumb{
+        width:rem(90);
+        height:rem(90);
+        &__ico-wishlist{
+            
+        }
+    }
+    &__content{
+        width:calc((100% - rem(10)) - rem(90));
+    }
+    .view{
+        display:flex;
+        align-items: center;
+        gap:rem(4);
+        &::before{
+            @include background('ico_view.svg', center);
+            content:"";
+            display:inline-block;
+            width:rem(13);
+            height:rem(10);
+        }
+    }
+    .bed{
+        display: flex;
+        align-items: center;
+        gap:rem(4);
+        &::before{
+            @include background('ico_bed.svg', center);
+            content:"";
+            display:inline-block;
+            width:rem(14);
+            height:rem(10);
+        }
+    }
+}
+
+.list-type3{
+    display:grid;
+    gap:rem(18);
+    @for $index from 1 through 5 {
+        &.col#{$index}{
+            grid-template-columns: repeat($index, 1fr);
+        }
+    }
+    &__thumb{
+        img{
+            width:100%;
+        }
+    }
+    &__content{
+        display:flex;
+        justify-content: space-between;
+        align-items: end;
+        padding:rem(8);
+    }
+}
+.list-type4{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:rem(10);
+    padding:rem(10) 0;
+    @for $index from 1 through 5 {
+        &.col#{$index}{
+            grid-template-columns: repeat($index, 1fr);
+        }
+    }
+    li{
+        display:grid;
+        justify-content: center;
+        text-align: center;
+        border-radius:rem(12);
+        box-shadow: $shadow1;
+        background-color:$white;
+    }
+    &__bg{
+        &.bed{
+            @include background('bg_bed-blue.svg', center);
+            width:rem(21.11);
+            height:rem(15.834);
+            margin:0 auto;
+        }
+    }
+    &__count{
+        color:$blue00;
+        font-size:rem(11);
+        font-weight:500;
+    }
+    &__category{
+        color:$gray6b;
+        font-size:rem(10);
+    }
+}
+
+.list-type5{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:rem(10);
+    li{
+        display:grid;
+        justify-content: center;
+        gap:rem(5);
+        padding:rem(10);
+        background-color:$white;
+        border-radius:rem(12);
+        box-shadow: $shadow1;
+    }
+    &__bg{
+        width:rem(24);
+        height:rem(24);
+        margin:0 auto;
+        &.car{
+            @include background('bg_car.svg', center);
+        }
+    }
+    &__desc{
+        @include ellipsis(1);
+        color:$gray6b;
+        font-size:rem(10);
+        font-weight:500;
+    }
+}
+
+
+.ico-location{
+    display:flex;
+    align-items: center;
+    gap:rem(3);
+    &.blue{
+        &::before{
+            @include background('ico_location-blue.svg', center);
+            content:"";
+            display:inline-block;
+            width:rem(8);
+            height:rem(10);
+            color:$blue41;
+            font-size:rem(10);
+            font-weight:500;
+            line-height:96%;
+        }
+    }
+    &.gray{
+        &::before{
+            @include background('ico_location-gray.svg', center);
+            content:"";
+            display:inline-block;
+            width:rem(10);
+            height:rem(14);
+            color:$grayb9;
+            font-size:rem(11);
+            line-height:96%;
+        }
+    }
+}

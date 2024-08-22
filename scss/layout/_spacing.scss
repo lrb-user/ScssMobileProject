@@ -1,7 +1,8 @@
 @use '../abstracts/' as *;
 
-$mt: (12, 14, 20, 24);
+$mt: (7, 8, 9, 12, 14, 20, 24);
 $ml: (6, 12);
+$gap: (4, 8);
 
 .px16{
     padding-inline: rem(16);
@@ -21,5 +22,10 @@ $ml: (6, 12);
 @each $margin in $ml{
     .ml#{$margin}{
         margin-left: rem($margin);
+    }
+}
+@each $gap in $gap{
+    .gap#{$gap}{
+        gap: rem($gap);
     }
 }

@@ -1,0 +1,16 @@
+@use '../abstracts/' as *;
+
+.rating{
+    display:flex;
+    align-items: center;
+    gap:rem(5);
+    color:$gray89;
+    font-size:rem(12);
+    line-height:96%;
+    &::before{
+        @include background('bg_rating.svg', center);
+        content:"";
+        width:rem(13);
+        height:rem(13);
+    }
+}

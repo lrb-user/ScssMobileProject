@@ -1,0 +1,8 @@
+@use './abstracts/' as *;
+body{
+    padding:rem(20);
+    box-sizing: border-box;
+}
+details summary{
+    font-size: 30px;
+}
