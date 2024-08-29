@@ -1,3 +1,5 @@
+@use '../abstracts/' as*;
+
 //컴포넌트 간의 정렬
 .align {
     display: flex;
@@ -46,4 +48,96 @@
     &-right {
       text-align: right;
     }
+}
+
+//하단 버튼 고정 레이아웃
+.fix-bottom-type1{
+  @include position(f, left, 0 , bottom, 0);
+  width:100%;
+  height: rem(63);
+  padding:0 rem(53);
+  box-sizing: border-box;
+  background-color:$white;
+  ul{
+    display:flex;
+  }
+  li{
+    flex:1;
+    button{
+      width:100%;
+      height:100%;
+    }
+    &.home{
+      @include background('ico_home.svg', center);
+      display:inline-block;
+      width:rem(20);
+      height:rem(63);
+    }
+    &.location{
+      @include background('ico_location-gray-large.svg', center);
+      display:inline-block;
+      width:rem(20);
+      height:rem(63);
+    }
+    &.bookmark{
+      @include background('ico_bookmark.svg', center);
+      display:inline-block;
+      width:rem(15);
+      height:rem(63);
+    }
+    &.mypage{
+      @include background('ico_mypage.svg', center);
+      display:inline-block;
+      width:rem(16);
+      height:rem(63);
+    }
+  }
+}
+
+.fix-bottom-type2{
+  @include position(f, left, 0 , bottom, 0);
+  display:flex;
+  align-items: center;
+  width:100%;
+  height: rem(81);
+  padding:0 rem(20);
+  border-top: rem(1) solid #0000001A;
+  border-radius: rem(10) rem(10) 0 0;
+  box-sizing: border-box;
+  background-color:$white;
+  &:has(.totalprice-txt){
+    display: flex;
+    justify-content: space-between;
+  }
+  .totalprice-txt{
+    p{
+      color:$blue2a;
+      font-size: rem(15);
+      font-weight: 600;
+      line-height: rem(14.4);
+    }
+    span{
+      color:$gray8c;
+      font-size: rem(13);
+      font-weight: 600;
+      line-height: rem(12.48);
+    }
+    .price{
+      color:$blue00;
+      font-size: rem(25);
+      font-weight: 500;
+      line-height: rem(24);
+    }
+  }
+}
+
+body{
+  $baseHeight:63;
+  &:has(.fix-bottom-type1){
+    padding-bottom: var(--pb, rem($baseHeight));
+  }
+  &:has(.fix-bottom-type2){
+    $baseHeight:116;
+    padding-bottom: var(--pb, rem($baseHeight));
+  }
 }

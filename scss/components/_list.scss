@@ -7,6 +7,8 @@
         overflow:hidden;
     }
     &__thumb{
+        border-radius:rem(15);
+        overflow:hidden;
         img{
             width:100%;
             height:100%;
@@ -130,11 +132,23 @@
     }
 }
 
+$icons : car 'bg_car.svg', aaa 'cdd';
 .list-type5{
     display:grid;
     grid-template-columns: repeat(4, 1fr);
     gap:rem(10);
     li{
+        @each $class, $bg in $icons {
+            &.#{$class}  {
+                &::before{
+                    @include background($bg, center);
+                    content:"";
+                    width:rem(24);
+                    height:rem(24);
+                    margin:0 auto;
+                }
+            }
+        }
         display:grid;
         justify-content: center;
         gap:rem(5);
@@ -142,15 +156,26 @@
         background-color:$white;
         border-radius:rem(12);
         box-shadow: $shadow1;
+        // &::before{
+        //     @each $class, $bg in $icons {
+        //         &.#{$class}  {
+        //             @include background($bg, center);
+        //         }
+        //     }
+        //     content:"";
+        //     width:rem(24);
+        //     height:rem(24);
+        //     margin:0 auto;
+        // }
     }
-    &__bg{
-        width:rem(24);
-        height:rem(24);
-        margin:0 auto;
-        &.car{
-            @include background('bg_car.svg', center);
-        }
-    }
+    // &__bg{
+    //     width:rem(24);
+    //     height:rem(24);
+    //     margin:0 auto;
+    //     &.car{
+    //         @include background('bg_car.svg', center);
+    //     }
+    // }
     &__desc{
         @include ellipsis(1);
         color:$gray6b;
@@ -159,7 +184,26 @@
     }
 }
 
-
+.list-type6{
+    display:grid;
+    gap:rem(10);
+    @for $index from 1 through 5 {
+        &.col#{$index}{
+            grid-template-columns: repeat($index, 1fr);
+        }
+    }
+    a{
+        display:inline-block;
+        width:100%;
+        height:100%;
+        border-radius: rem(5.34);
+        overflow: hidden;
+    }
+    img{
+        width:100%;
+        height:100%;
+    }
+}
 .ico-location{
     display:flex;
     align-items: center;
@@ -187,6 +231,18 @@
             color:$grayb9;
             font-size:rem(11);
             line-height:96%;
+        }
+    }
+    &.black{
+        &::before{
+            @include background('ico_location-black.svg', center);
+            content:"";
+            display:inline-block;
+            width:rem(15);
+            height:rem(18);
+            color:$blue2a;
+            font-size:rem(13);
+            line-height:rem(12.48);
         }
     }
 }

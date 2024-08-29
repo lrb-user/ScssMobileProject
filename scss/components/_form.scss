@@ -46,6 +46,61 @@ $selectSettings:(
     }
 }
 
+%form2{
+    height:rem(50);
+    padding:0 rem(20);
+    font-size:rem(14);
+    font-weight:500;
+    border:rem(1) solid #5c5c5c;
+    border-radius: rem(10);
+    box-sizing: border-box;
+    input{
+        height:100%;
+        vertical-align: top;
+        border:none;
+        &::placeholder{
+            color:#6a6a6a;
+            font-size:rem(14);
+            font-weight:500;
+        }
+    }
+    &.user{
+        input{
+            width:calc(100% - rem(30));
+            padding-left:rem(5);
+        }
+        &::before{
+            @include background('ico_user.svg', center);
+            content:"";
+            display:inline-block;
+            width:rem(20);
+            height:100%;
+        }
+
+    }
+    &.key{
+        input{
+            width:calc(100% - rem(70));
+            padding-left:rem(20);
+            color:#6a6a6a;
+        }
+        &::before{
+            @include background('ico_key.svg', center);
+            content:"";
+            display:inline-block;
+            width:rem(20);
+            height:100%;
+        }
+        &::after{
+            @include background('ico_eye.svg', center);
+            content:"";
+            display:inline-block;
+            width:rem(18);
+            height:100%;
+        }
+    }
+}
+
 
 
 //input + label 일 경우
@@ -60,10 +115,44 @@ $selectSettings:(
         letter-spacing: rem(-0.3);
     }
 }
+.input-label-type2{
+    display:grid;
+    gap:rem(12);
+    label{
+        display:block;
+        font-size:rem(14);
+        color:$gray09;
+        font-weight:500;
+    }
+}
 //input 
 .input-type1{
     @extend %form;
     width:var(--w, 100%);
+}
+.input-type2{
+    @extend %form2;
+    width:var(--w, 100%);
+}
+
+//search
+.search-type1{
+    display:flex;
+    align-items: center;
+    height:rem(50);
+    padding:0 rem(10);
+    border-radius:rem(10);
+    box-sizing: border-box;
+    box-shadow: $shadow2;
+    input{
+        width:calc(100% - rem(40));
+        height:100%;
+        border:none;
+        color:$gray95;
+        font-size: rem(11);
+        font-weight: 500;
+        line-height: rem(10.56);
+    }
 }
 
 //select
@@ -81,6 +170,13 @@ $selectSettings:(
     padding-right:rem(25);
     background-color:map-get($selectSettings, bgColor);
 }
+.select-type2{
+    @include background('bg_select.svg', right rem(20) center);
+    @extend %form2;
+    width:var(--w, 100%);
+    appearance: none;
+    color:#6a6a6a;
+}
 
 //textarea
 .textarea-type1{
@@ -91,41 +187,87 @@ $selectSettings:(
 }
 
 //radio
-.radio-type2{
-    display: flex;
-    justify-content: space-between;
-    .radio-type1{
-        // order:1;
-    }
-    label{
-        justify-content: space-between;
-        width:100%;
-        &::before{
-            order:2;
-        }
-    }
-}
 .radio-group1{
     display:flex;
     align-items: center;
     gap:rem(27);
 }
 .radio-group2{
-    border-bottom: 1px solid rgba(18, 45, 77, 0.80);
+    display: grid;
+    gap: rem(10);
 }
-.input-type2{
-    width:calc(100% - rem(14));
-    height:rem(38);
-    border:none;
-    &:read-only{
-        color:$blue2a;
-    }
-}
-.radio-type2{
-    div{
 
+//!이렇게 써도 되는지..!! 아님 감싸고 부모에 radio-type2를 줘서 재정의 해야될지..
+// .radio-type1{
+//     &.type1-1{
+//         + label{
+//             width:100%;
+//             height:rem(38);
+//             justify-content: space-between;
+//             font-size:rem(14);
+//             font-weight:400;
+//             line-height:96%;
+//             border-bottom: 1px solid rgba(18, 45, 77, 0.80);
+//             &::before{
+//                 order:2;
+//             }
+//             &.cash{
+//                 div{
+//                     display:flex;
+//                     align-items: center;
+//                     gap:rem(5);
+//                     &::before{
+//                         @include background('ico_cash.svg', center);
+//                         content:"";
+//                         display:inline-block;
+//                         width:rem(24);
+//                         height:rem(24);
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+$icon : cash 'ico_cash.svg', newcard 'ico_newcard.svg' , paypal 'ico_paypal.svg', applepay 'ico_applepay.svg';
+.radio-label-type1{
+    label{
+        display:flex;
+        justify-content: space-between;
+        width:100%;
+        height:rem(38);
+        border-bottom: 1px solid #122D4DCC;
+        &::before{
+            order:1;
+        }
+        @each $name, $bg in $icon {
+            .#{$name}{
+                display:flex;
+                align-items: center;
+                gap:rem(5);
+                &::before{
+                    content:"";
+                display:inline-block;
+                width:rem(24);
+                height:rem(24);
+                @include background($bg, center);
+                }
+            }
+        }
+        // .cash{
+        //     display:flex;
+        //     align-items: center;
+        //     gap:rem(5);
+        //     &::before{
+        //         @include background('ico_cash.svg', center);
+        //         content:"";
+        //         display:inline-block;
+        //         width:rem(24);
+        //         height:rem(24);
+        //     }
+        // }
     }
 }
+
 // .radio-type1{
 //     @include ally-hidden;
 //     + label{

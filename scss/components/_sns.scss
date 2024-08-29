@@ -1,0 +1,19 @@
+@use '../abstracts/' as *;
+
+$sns : google 'ico_google.svg' , apple 'ico_apple.svg', facebook 'ico_facebook.svg';
+
+.sns-group{
+    display:flex;
+    justify-content: center;
+    gap:rem(20);
+    .sns{
+        display:inline-block;
+        width:rem(20);
+        height:rem(20);
+        @each $class, $bgUrl in $sns{
+            &.#{$class} {
+                @include background($bgUrl, center);
+            }
+        }
+    }
+}

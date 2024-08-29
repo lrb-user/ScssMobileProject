@@ -1390,4 +1390,22 @@ body:has(.fix-bottom-type2) {
   height: 92vw;
 }
 
-/*# sourceMappingURL=style.css.map */
+.login-page,
+.profile-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-page > div,
+.profile-page > div {
+  width: 100%;
+}
+
+.login-form {
+  display: grid;
+  gap: 2rem;
+}
+
+/*# sourceMappingURL=sub.css.map */

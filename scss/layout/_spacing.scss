@@ -1,12 +1,11 @@
 @use '../abstracts/' as *;
 
-$mt: (7, 8, 9, 12, 14, 20, 24);
+$mt: (7, 8, 9, 10, 11, 12, 14, 15, 20, 24, 30, 35, 60);
 $ml: (6, 12);
-$gap: (4, 8);
+$px: (16, 20, 26, 30);
+$pt: (24, 30);
+$gap: (4, 8, 12, 15);
 
-.px16{
-    padding-inline: rem(16);
-}
 .mx-auto{
     margin:0 auto;
 }
@@ -22,6 +21,16 @@ $gap: (4, 8);
 @each $margin in $ml{
     .ml#{$margin}{
         margin-left: rem($margin);
+    }
+}
+@each $padding in $px{
+    .px#{$padding}{
+        padding-inline: rem($padding);
+    }
+}
+@each $padding in $pt{
+    .pt#{$padding}{
+        padding-top:rem($padding);
     }
 }
 @each $gap in $gap{

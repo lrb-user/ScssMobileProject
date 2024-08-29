@@ -8,12 +8,132 @@
     <link rel="stylesheet" href="css/guide.css">
 </head>
 <body>
+    <p style="background:red; color:white; font-size:1.8rem;">클래스명이 적절한지, 구조가 맞는지, 컴포넌트 분류법이 맞는지 확인 부탁드립니당!</p>
+    <details>
+        <summary>Header</summary>
+        <div>
+            <h2>header-type1</h2>
+            <header class="header-type1">
+                <div class="header-type1__left">
+                    <a href="" class="btn-prev" aria-label="이전으로"></a>
+                </div>
+                <h1>제목입니다.</h1>
+                <div class="header-type1__right"></div>
+            </header>
+            <h2>header-type1 + search</h2>
+            <header class="header-type1">
+                <div class="header-type1__left">
+                    <a href="" class="btn-prev" aria-label="이전으로"></a>
+                </div>
+                <h1>제목입니다.</h1>
+                <div class="header-type1__right">
+                    <a href="" class="btn-search" aria-label="검색"></a>
+                </div>
+            </header>
+
+            <h2>header-type2</h2>
+            <header class="header-type2">
+                <div class="header-type2__left">
+                    <a href="" class="btn-prev white" aria-label="이전으로"></a>
+                </div>
+                <div class="header-type2__right">
+                    <a href="" class="btn-share white" aria-label="공유"></a>
+                    <a href="" class="btn-like white" aria-label="좋아요"></a>
+                </div>
+            </header>
+        </div>
+    </details>
+
     <details>
         <summary>기타 UI</summary>
         <div>
             <h2>rating</h2>
             <div class="rating">4.9</div>
         </div>
+        <div class="sns-group">
+            <a href="" class="sns google" aria-label="구글"></a>
+            <a href="" class="sns apple" aria-label="핸드폰 애플"></a>
+            <a href="" class="sns facebook" aria-label="페이스북"></a>
+        </div>
+        <nav class="fix-bottom-type1">
+            <ul>
+                <li class="home">
+                    <button aria-label="홈"></button>
+                </li>
+                <li class="location">
+                    <button aria-label="홈"></button>
+                </li>
+                <li class="bookmark">
+                    <button aria-label="홈"></button>
+                </li>
+                <li class="mypage">
+                    <button aria-label="홈"></button>
+                </li>
+            </ul>
+        </nav>
+        <!-- <div class="thumnail room">
+            <a href="">
+                <img src="images/@thumnail_room.png" alt="객실">
+            </a>
+        </div> -->
+        <div>
+            <p style="background:red; color:white; font-size:1.8rem;">
+                1. profile-box 클래스명이 적절한지, 클래스명으로 컴포넌트를 분류하는 필요성이 있는지<br/>
+                2. h1부분 css를 제가 짠게 맞는지 아님 클래스명을 하나 만들어서 css를 짜는게 맞을지.
+            </p>
+            <div class="profile-box align both vm">
+                <h1>
+                    <span>Let’s Find your</span>
+                    <b>Favorite Home</b>
+                </h1>
+                <div class="profile-img">
+                    <img src="images/@profile_small.png" alt="사용자 프로필 사진">
+                </div>
+            </div>
+        </div>
+    </details>
+
+    <details>
+        <summary>devide</summary>
+        <div>
+            <h2>devide-type1</h2>
+            <div class="devide-type1">
+                <span class="devide-type1__title">Or continue with</span>
+            </div>
+            <h2>devide-type2</h2>
+            <div class="devide-type2"></div>
+        </div>
+    </details>
+    
+    <details>
+        <summary>Button</summary>
+        <div>
+            <h2>button</h2>
+            <h3>색깔 정의</h3>
+            <button class="btn blue base full-size rounded55">.blue</button>
+            <br/><br/>
+            <a class="btn skyblue base full-size rounded55">.skyblue</a>
+            <br/><br/>
+            <a class="btn white base full-size rounded55">.white</a>
+            <br/><br/>
+            <h3>크기 정의</h3>
+            <button class="btn blue sm full-size rounded55">.sm</button>
+            <br/><br/>
+            <button class="btn blue base full-size rounded55">.base</button>
+            <br/><br/>
+            <h3>둥근 정도 정의</h3>
+            <button class="btn blue base full-size rounded55">.rounded55</button>
+            <br/><br/>
+            <h3>기타</h3>
+            <a href="" class="btn-more">More</a>
+            <button class="btn-fillter"></button>
+        </div>
+    </details>
+
+    <details>
+        <summary>Bedge</summary>
+        <h2>bedge</h2>
+        <div class="bedge">Apartment</div>
     </details>
 
     <details>
@@ -22,6 +142,10 @@
             <h2>heading-type</h2>
             <h2 class="heading-type1">.heading-type1</h2>
             <h2 class="heading-type2">.heading-type2</h2>
+            <h2 class="heading-type3">.heading-type3</h2>
+            <h2 class="heading-type4">.heading-type4</h2>
+            <h2 class="heading-type5">.heading-type5</h2>
+            <h2 class="heading-type6">.heading-type6</h2>
 
             <h2>text-type</h2>
             <div class="text-type1">.text-type1</div>
@@ -29,6 +153,8 @@
             <div class="text-type3">.text-type3</div>
             <div class="text-type4">.text-type4</div>
             <div class="text-type5">.text-type5</div>
+            <div class="text-type6">.text-type6</div>
+            <div class="text-type7">.text-type7</div>
         </div>
     </details>
 
@@ -96,7 +222,7 @@
                             <div class="list-type1__text">
                                 <div class="text-type1">Lorem House</div>
                                 <div class="text-type2">$340/month</div>
-                                <div class="ico-location gray">Avenue, West Side</div>
+                                <div class="location gray">Avenue, West Side</div>
                             </div>
                             <button class="btn-bookmark" aira-label="북마크에 저장"></button>
                         </div>
@@ -114,10 +240,10 @@
                         <div class="list-type2__content">
                             <div class="align vm both">
                                 <div class="rating">4.9</div>
-                                <div class="text-type4">Apartment</div>
+                                <div class="bedge">Apartment</div>
                             </div>
                             <div class="text-type5 mt14">Woodland Apartment</div>
-                            <div class="ico-location blue mt7">1012 Ocean avanue, New yourk, USA</div>
+                            <div class="location blue mt7">1012 Ocean avanue, New yourk, USA</div>
                             <div class="align vm both mt9">
                                 <div class="align gap4">
                                     <div class="view">1,225</div>
@@ -141,7 +267,7 @@
                             <div class="list-type3__text">
                                 <div class="text-type1">Lorem House</div>
                                 <div class="text-type2 mt8">$340/month</div>
-                                <div class="ico-location gray">Avenue, West Side</div>
+                                <div class="location gray">Avenue, West Side</div>
                             </div>
                             <button class="btn-bookmark" aira-label="북마크에 저장"></button>
                         </div>
@@ -156,7 +282,7 @@
                             <div class="list-type3__text">
                                 <div class="text-type1">Lorem House</div>
                                 <div class="text-type2 mt8">$340/month</div>
-                                <div class="ico-location gray">Avenue, West Side</div>
+                                <div class="location gray">Avenue, West Side</div>
                             </div>
                             <button class="btn-bookmark" aira-label="북마크에 저장"></button>
                         </div>
@@ -190,48 +316,85 @@
 
             <h2>list-type5</h2>
             <ul class="list-type5">
-                <li>
-                    <div class="list-type5__bg car"></div>
+                <li class="car">
                     <div class="list-type5__desc">Car Parking</div>
                 </li>
                 <li>
-                    <div class="list-type5__bg car"></div>
                     <div class="list-type5__desc">Car Parking</div>
                 </li>
                 <li>
-                    <div class="list-type5__bg car"></div>
                     <div class="list-type5__desc">Car Parking</div>
                 </li>
                 <li>
-                    <div class="list-type5__bg car"></div>
                     <div class="list-type5__desc">Car Parking</div>
                 </li>
                 <li>
-                    <div class="list-type5__bg car"></div>
                     <div class="list-type5__desc">Car Parking</div>
                 </li>
                 <li>
-                    <div class="list-type5__bg car"></div>
                     <div class="list-type5__desc">Car Parking</div>
                 </li>
                 <li>
-                    <div class="list-type5__bg car"></div>
+                    
                     <div class="list-type5__desc">Swimming1111111111111</div>
                 </li>
                 <li>
-                    <div class="list-type5__bg car"></div>
+                    
                     <div class="list-type5__desc">Car Parking</div>
+                </li>
+            </ul>
+
+            <h2>list-type6</h2>
+            <ul class="list-type6 col2">
+                <li>
+                    <a href="">
+                        <img src="images/img_gallery.png" alt="객실">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/img_gallery.png" alt="객실">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/img_gallery.png" alt="객실">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/img_gallery.png" alt="객실">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/img_gallery.png" alt="객실">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="images/img_gallery.png" alt="객실">
+                    </a>
                 </li>
             </ul>
         </div>
     </details>
 
-    <details open>
+    <details>
         <summary>Form</summary>
         <div>
             <h2>radio</h2>
             <input type="radio" checked name="radio" class="radio-type1" id="radio1-1"><label for="radio1-1">선택1</label> <br/>
-            <input type="radio" name="radio" class="radio-type1" id="radio1-2"><label for="radio1-2">선택2</label>
+            <input type="radio" name="radio" class="radio-type1" id="radio1-2"><label for="radio1-2">선택2</label><br><br>
+            <p style="background:red; color:white; font-size:1.8rem;">코드 확인해주세요!</p>
+            <div class="radio-label-type1">
+                <input type="radio" name="radio" class="radio-type1" id="radio3-1">
+                <label for="radio3-1">Property Tour</label>
+            </div>
+            <div class="radio-label-type1">
+                <input type="radio" name="radio" class="radio-type1" id="radio4-1">
+                <label for="radio4-1"><div class="cash">Cash</div></label>
+            </div>
 
             <h2>radio 그룹</h2>
             <div class="radio-group1">
@@ -240,13 +403,26 @@
                 <input type="radio" name="radio" class="radio-type1" id="radio2-3"><label for="radio2-3">선택2</label>
             </div>
             <div class="radio-group2">
-                <p style="color:red; font-weight:bold; font-size:1.6rem;">label로 연결을 해놓았는데 input부분이 클릭이 안돼요!</p>
-                <p style="color:red; font-weight:bold; font-size:1.6rem;">그리고 저 디자인에는 이렇게 코드를 작성하는게 맞을까요~??</p>
-                <div class="radio-type2">
-                    <input type="radio" name="radio" class="radio-type1" id="radio3-1">
-                    <label for="radio3-1"><input type="text" class="input-type2" value="Property Tour" readonly></label>
+                <div class="radio-label-type1">
+                    <input type="radio" name="radio" class="radio-type1" id="radio3-3">
+                    <label for="radio3-3">Property Tour</label>
+                </div>
+                <div class="radio-label-type1">
+                    <input type="radio" name="radio" class="radio-type1" id="radio3-4">
+                    <label for="radio3-4">Real Estate</label>
                 </div>
             </div>
+            <div class="radio-group2">
+                <div class="radio-label-type1">
+                    <input type="radio" name="radio" class="radio-type1" id="radio4-3">
+                    <label for="radio4-3"><div class="cash">Cash</div></label>
+                </div>
+                <div class="radio-label-type1">
+                    <input type="radio" name="radio" class="radio-type1" id="radio4-4">
+                    <label for="radio4-4"><div class="cash">Cash</div></label>
+                </div>
+            </div>
+            
 
             <h3>checkBox</h3>
             
@@ -258,9 +434,42 @@
                 <input type="text" class="input-type1" id="txt1-1" placeholder="placeholder">
             </div>
             <br/><br/>
+            <p style="background:red; color:white; font-size:1.8rem;">코드 확인해주세요!</p>
+            <div class="input-type2 user">
+                <input type="text" class="" placeholder="Username">
+            </div>
+            <br/><br/>
+            <p style="background:red; color:white; font-size:1.8rem;">코드 확인해주세요!</p>
+            <div class="input-type2 key">
+                <input type="password">
+            </div>
+            <div class="input-label-type2">
+                <label for="txt2-1">Username</label>
+                <div class="input-type2 user">
+                    <input type="text" id="txt2-1" placeholder="Username">
+                </div>
+            </div>
+            <br/><br/>
+
+            <h2>searchBox</h2>
+            <div class="search-type1">
+                <button class="btn-search gray" aria-label="돋보기"></button>
+                <input type="text">
+            </div>
+            <div class="align gap12">
+                <div class="search-type1" style="width:calc(100% - 64px);">
+                    <button class="btn-search gray" aria-label="돋보기"></button>
+                    <input type="text">
+                </div>
+                <button class="btn-fillter"></button>
+            </div>
             <h2>select</h2>
             <select class="select-type1">
                 <option>Day</option>
+            </select>
+            <br/><br/>
+            <select class="select-type2">
+                <option>Select</option>
             </select>
 
             <h2>select 그룹</h2>
@@ -278,6 +487,43 @@
 
             <h2>textarea</h2>
             <textarea class="textarea-type1" placeholder="placeholder"></textarea>
+        </div>
+    </details>
+
+    <details>
+        <summary>profile</summary>
+        <h2>프로필 이미지 50 / 사용자 이름 + 역할</h2>
+        <div class="profile-info-box">
+            <div class="profile-img base">
+                <img src="images/@profile_user2.png" alt="사용자 프로필 사진">
+            </div>
+            <div>
+                <div class="profile-name base">사용자 이름</div>
+                <div class="profile-role">사용자 역할</div>
+            </div>
+        </div>
+        <h2>프로필 이미지 38 / 사용자 이름</h2>
+        <div class="profile-info-box">
+            <div class="profile-img sm">
+                <img src="images/@profile_user2.png" alt="사용자 프로필 사진">
+            </div>
+            <div class="profile-name sm">사용자 이름</div>
+        </div>
+        <h2>프로필 이미지 50 / 사용자 이름 + 역할 / 이메일 + 전화</h2>
+        <div class="align both vm">
+            <div class="profile-info-box">
+                <div class="profile-img base">
+                    <img src="images/@profile_user2.png" alt="사용자 프로필 사진">
+                </div>
+                <div>
+                    <div class="profile-name base">사용자 이름</div>
+                    <div class="profile-role">사용자 역할</div>
+                </div>
+            </div>
+            <div class="align gap15">
+                <a href="mailto:aaa@naver.com" class="btn-email" aria-label="이메일 쓰기"></a>
+                <a href="tel:000-0000-0000" class="btn-phone" aria-label="전화 걸기"></a>
+            </div>
         </div>
     </details>
 </body>

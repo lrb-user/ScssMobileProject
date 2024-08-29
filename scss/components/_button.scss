@@ -1,3 +1,4 @@
+@use 'sass:list';
 @use '../abstracts/' as *;
 
 .btn-bookmark{
@@ -5,3 +6,159 @@
     width:rem(33);
     height:rem(33);
 }
+.btn-prev{
+    @include background('ico_prev.svg', center);
+    display:inline-block;
+    width:rem(40);
+    height:rem(40);
+    &.white{
+        background-color:$white;
+        border-radius:50%;
+    }
+}
+.btn-share{
+    @include background('ico_share.svg', center);
+    display:inline-block;
+    width:rem(40);
+    height:rem(40);
+    &.white{
+        background-color:$white;
+        border-radius:50%;
+    }
+}
+.btn-like{
+    @include background('ico_heart.svg', center);
+    display:inline-block;
+    width:rem(40);
+    height:rem(40);
+    &.white{
+        background-color: $white;
+        border-radius: 50%;
+    }
+}
+.btn-search{
+    @include background('ico_micro.svg', center);
+    display:inline-block;
+    width:rem(40);
+    height:rem(40);
+    &.gray{
+        @include background('ico_micro-gray.svg', center);
+    }
+}
+.btn-more{
+    color:$gray98;
+    font-size: rem(12);
+    font-weight: 600;
+    line-height: rem(11.52);
+}
+.btn-viewmap{
+    color:$blue00;
+    font-size: rem(12);
+    font-weight: 500;
+    line-height: rem(11.52);
+}
+.btn-email{
+    @include background('ico_email.svg', center);
+    display:inline-block;
+    width:rem(24);
+    height:rem(24);
+}
+.btn-phone{
+    @include background('ico_phone.svg', center);
+    display:inline-block;
+    width:rem(24);
+    height:rem(24);
+}
+.btn-fillter{
+    @include background('ico_fillter.svg', center);
+    display:inline-block;
+    width:rem(52);
+    height:rem(52);
+    background-color:#309df0;
+    border-radius: rem(10);
+    box-shadow: 0px 36px 10px 0px #308DFF1A;
+}
+
+//버튼 색깔 정의
+$buttonColor: (
+    1: (
+        'className':'blue',
+        'bgColor': $blue00,
+        'color': $white,
+        'borderColor': $blue00,
+        ),
+    2: (
+        'className':'skyblue',
+        // 'bgColor': $blue24,
+        'bgColor': $blueea,
+        'color': $blue18,
+        'borderColor': $blue24,      
+    ),
+    3: (
+        'className': 'white',
+        'bgColor': $white,
+        'color': $blue00,
+        'borderColor': $white,
+    )
+);
+
+//버튼 사이즈 정의
+$buttonSize: (
+    1: (
+        'className': '.base',
+        'height': 46,
+        'fontSize': 17,
+        'fontWeight': 600,
+    ),
+    2: (
+        'className': '.sm',
+        'height': 32,
+        'fontSize': 12,
+        'fontWeight': 500,
+    )
+);
+
+//버튼 radius정의
+// $buttonRadius: (
+//     'className': '.rounded55',
+//     'borderRadius': 55,
+// );
+
+@mixin buttonColor($varName, $index) {
+    &.#{map-get($varName, $index, className)}{
+        background-color: map-get($varName, $index, bgColor);
+        color:map-get($varName, $index, color);
+        border-color:map-get($varName, $index, borderColor);
+    }
+}
+@mixin buttonSize($varName, $index) {
+    &#{map-get($varName, $index, className)}{
+        height: rem(map-get($varName, $index, height));
+        font-size: rem(map-get($varName, $index, fontSize));
+        font-weight: map-get($varName, $index, fontWeight);
+    }
+}
+
+// @mixin buttonRadius($varName) {
+//    &#{map-get($varName, className)} {
+//         border-radius: rem(map-get($varName, borderRadius));
+//    } 
+// }
+.btn{
+    @for $index from 1 through list.length($buttonSize) {
+        @include buttonSize($buttonSize ,$index);
+    }
+    @for $index from 1 through list.length($buttonColor) {
+        @include buttonColor($buttonColor ,$index);
+    }
+    // @include buttonRadius($buttonRadius);
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    width:var(--w, 100%);
+    &.full-size{
+        width:100%;
+    }
+}
+
+

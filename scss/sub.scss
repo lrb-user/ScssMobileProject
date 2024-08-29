@@ -1,0 +1,21 @@
+@use './abstracts/' as *;
+@use './base/' as *;
+@use './layout' as *;
+@use './components/' as *;
+
+// login
+.login-page,
+.profile-page{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+}
+.login-page > div,
+.profile-page > div{
+    width:100%;
+}
+.login-form{
+    display:grid;
+    gap:rem(20);
+}

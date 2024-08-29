@@ -1,0 +1,16 @@
+@use '../abstracts/' as *;
+
+.bedge{
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    height:rem(20);
+    padding:0 rem(6);
+    background-color:$grayf4;
+    color:$blue47;
+    font-size: rem(10);
+    font-weight: 500;
+    line-height: rem(9.6);
+}
+
+

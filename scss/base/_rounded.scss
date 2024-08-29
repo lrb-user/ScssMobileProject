@@ -1,0 +1,8 @@
+@use '../abstracts/' as *;
+$radius : (55, 60);
+
+@each $rounded in $radius {
+    .rounded#{$rounded}{
+        border-radius: rem($rounded);
+    }
+}

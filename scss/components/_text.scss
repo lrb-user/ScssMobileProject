@@ -13,6 +13,29 @@
     font-weight:600;
     line-height:96%;
 }
+.heading-type3{
+    color:$gray09;
+    font-size:rem(18);
+    font-weight:600;
+    line-height:rem(27);
+}
+.heading-type4{
+    font-size: rem(25);
+    font-weight: 600;
+    line-height: rem(37.5);
+}
+.heading-type5{
+    color:$blue2a;
+    font-size: rem(14);
+    font-weight: 600;
+    line-height: rem(13.44);
+}
+.heading-type5{
+    color:$blue12;
+    font-size: rem(16);
+    font-weight: 600;
+    line-height: rem(15.36);
+}
 
 //text-type
 .text-type1{
@@ -50,4 +73,14 @@
     color:$gray8c;
     font-size:rem(13);
     line-height:96%;
+}
+.text-type7{
+    color:$gray61;
+    font-size: rem(12);
+    line-height: rem(18);
+}
+
+//text-color
+.text-blue{
+    color:$blue24;
 }
